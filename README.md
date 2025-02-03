@@ -102,7 +102,7 @@ You can also specify username, password and base url by using `PLUP_USER`,
 If you are in a maven project, the basic usage is fairly simple. Just type:
 
 ```bash
-pluploader --user admin --password admin
+pluploaderng --user admin --password admin
 ```
 
 The pluploader then uploads and enables the current artifact specified in the
@@ -130,14 +130,14 @@ which is the normal addon-key, or `--mpac-id` (experimental), which is the
 numeric id of an marketplace id (72307 https://marketplace.atlassian.com/apps/72307)
 
 ```bash
-pluploader --mpac-key com.atlassian.confluence.extra.team-calendars
+pluploaderng --mpac-key com.atlassian.confluence.extra.team-calendars
 ```
 
 **NOTE**:
 If you specify one of the global options, you need to add the `install`-command:
 
 ```bash
-pluploader --base-url https://your-confluence.com:8090 install
+pluploaderng --base-url https://your-confluence.com:8090 install
 ```
 
 You can work around this by using the configuration file or by using environment variables.
@@ -151,7 +151,7 @@ pluploader also supports installing atlassian-connect plugins to cloud instances
 by enabling cloud support with `--cloud` and providing the descriptor url with `--plugin-uri`.
 
 ```bash
-pluploader install --cloud --plugin-uri https://your.ngrok.here
+pluploaderng install --cloud --plugin-uri https://your.ngrok.here
 ```
 
 ### Managing plugins
@@ -165,7 +165,7 @@ by using the subcommands `list`, `info`, `enable`, `disable`, and `uninstall`
 To get a list of all installed plugins of the configured instance, just type:
 
 ```bash
-pluploader list
+pluploaderng list
 ```
 
 A green checkmark indicates that the plugin is enabled, while a exclamation mark
@@ -175,7 +175,7 @@ In order to retrieve more information about a specific plugin, you can use the
 command `info`.
 
 ```bash
-pluploader info com.example.plugin.key
+pluploaderng info com.example.plugin.key
 ```
 
 The plugin key can be omitted in a maven directory, if the parameter
@@ -190,19 +190,19 @@ pluploader also supports disabling or enabling all apps using Safe Mode (does no
 To retrieve the status if safe-mode is enabled at the moment, use
 
 ```bash
-pluploader safe-mode status
+pluploaderng safe-mode status
 ```
 
 You can enable and disable safe mode by using
 
 ```bash
-pluploader safe-mode enable
+pluploaderng safe-mode enable
 ```
 
 And
 
 ```bash
-pluploader safe-mode disable
+pluploaderng safe-mode disable
 # OR
 pluploader safe-mode disable --keep-state
 ```
@@ -214,13 +214,13 @@ You can also use the pluploader to get and set licenses for your plugins.
 To get the current license information:
 
 ```bash
-pluploader license info com.example.plugin.key
+pluploaderng license info com.example.plugin.key
 ```
 
 To set a license, use the `update` functionality.
 
 ```bash
-pluploader license update com.example.plugin.key --license "AAA..."
+pluploaderng license update com.example.plugin.key --license "AAA..."
 ```
 
 > ℹ Pro tip: Use `xargs` to read a license from a file by using
@@ -234,7 +234,7 @@ You can also apply [timebomb licenses](https://developer.atlassian.com/platform/
 by using
 
 ```bash
-pluploader license timebomb com.example.plugin.key --timebomb threehours
+pluploaderng license timebomb com.example.plugin.key --timebomb threehours
 ```
 
 You can choose between 3 hours (threehours), 60 seconds (sixtyseconds) and
@@ -243,7 +243,7 @@ You can choose between 3 hours (threehours), 60 seconds (sixtyseconds) and
 To remove an applied license, you can use:
 
 ```bash
-pluploader license delete com.example.plugin.key
+pluploaderng license delete com.example.plugin.key
 ```
 
 #### Access Tokens (Cloud Development Licenses)
@@ -251,10 +251,10 @@ pluploader license delete com.example.plugin.key
 You can also use pluploader to list, get, update/set and delete access tokens of apps.
 
 ```bash
-pluploader license access-token list
-pluploader license access-token info com.example.plugin.key
-pluploader license access-token update com.example.plugin.key --token "token"
-pluploader license access-token delete com.example.plugin.key
+pluploaderng license access-token list
+pluploaderng license access-token info com.example.plugin.key
+pluploaderng license access-token update com.example.plugin.key --token "token"
+pluploaderng license access-token delete com.example.plugin.key
 ```
 
 ### API
@@ -265,7 +265,7 @@ well-known tool `curl`. You can use `-X METHOD` to choose the HTTP method and
 `-H "HEADER-NAME: HEADER-VALUE"` to add a HTTP header.
 
 ```bash
-pluploader api -X POST -H "content-type: application/json" rest/api/content/ '{ "type":"page", "title":"My Test Page", "space":{"key":"TEST"}, "body":{ "storage": { "value":"<p>This is a new page</p>", "representation":"storage" } } }'
+pluploaderng api -X POST -H "content-type: application/json" rest/api/content/ '{ "type":"page", "title":"My Test Page", "space":{"key":"TEST"}, "body":{ "storage": { "value":"<p>This is a new page</p>", "representation":"storage" } } }'
 ```
 
 ### RPC
@@ -278,7 +278,7 @@ parameter (String token) required for many commands.
 
 
 ```bash
-pluploader rpc addUser '{"name":"charlie", "fullname": "charlie", "email":"charlie@charlie"}' charlie
+pluploaderng rpc addUser '{"name":"charlie", "fullname": "charlie", "email":"charlie@charlie"}' charlie
 ```
 
 ### Scheduled Jobs (Confluence - Experimental)
@@ -292,7 +292,7 @@ execute them.
 You can grab a list of all jobs by running
 
 ```bash
-pluploader job list
+pluploaderng job list
 ```
 
 Available options are:
@@ -303,21 +303,21 @@ Available options are:
 You can also run jobs by running
 
 ```bash
-pluploader job run
+pluploaderng job run
 ```
 
 Get more information about a job by running
 
 ```bash
-pluploader job info
+pluploaderng job info
 ```
 
 And disable or enable jobs by running
 
 ```bash
-pluploader job enable
+pluploaderng job enable
 # AND
-pluploader job disable
+pluploaderng job disable
 ```
 
 A job can be specified by either using `--id <job id>` or by using
