@@ -19,14 +19,14 @@ server and cloud instances (Confluence/Jira) written in python(3).
 ### pipx (recommended)
 
 ```bash
-pipx install pluploader
+pipx install pluploaderng
 ```
 
 
 ### pip
 
 ```bash
-pip3 install pluploader
+pip3 install pluploaderng
 ```
 
 ### brew (MacOS)

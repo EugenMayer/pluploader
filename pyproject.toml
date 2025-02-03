@@ -1,12 +1,12 @@
 [tool.poetry]
-name = "pluploader"
+name = "pluploaderng"
 version = "0.9.0"
 description = "CLI Confluence/Jira Plugin uploader"
-authors = ["Fabian Siegel <fabian@livelyapps.com>"]
+authors = ["Eugen Mayer", "Fabian Siegel <fabian@livelyapps.com>"]
 license = "Apache-2.0"
 readme = "README.md"
-homepage = "https://github.com/livelyapps/pluploader"
-repository = "https://github.com/livelyapps/pluploader"
+homepage = "https://github.com/eugenmayer/pluploader"
+repository = "https://github.com/eugenmayer/pluploader"
 packages = [
     { include = "pluploader" },
 ]
