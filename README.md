@@ -29,12 +29,6 @@ pipx install pluploaderng
 pip3 install pluploaderng
 ```
 
-### brew (MacOS)
-
-```bash
-brew tap craftamap/tap && brew install pluploader
-```
-
 ### Docker
 
 If you do not want to install python3 or pip, you can also pull the latest
@@ -46,7 +40,7 @@ docker pull craftamap/pluploader:latest
 docker pull ghcr.io/craftamap/pluploader/pluploader:v0.8.3
 ```
 
-pluploader can then be run by executing
+pluploaderng can then be run by executing
 
 ```bash
 docker run -v "$(pwd)":/workdir -it craftamap/pluploader:v0.8.3
@@ -204,7 +198,7 @@ And
 ```bash
 pluploaderng safe-mode disable
 # OR
-pluploader safe-mode disable --keep-state
+pluploaderng safe-mode disable --keep-state
 ```
 
 ### Licenses

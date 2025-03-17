@@ -18,9 +18,9 @@ jobs:
       run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
     - name: Build Container
       run: |
-        docker build . -t craftamap/pluploader:${{ github.event.inputs.version }} --build-arg PL_VERSION=${{ github.event.inputs.version }}
-        docker tag craftamap/pluploader:${{ github.event.inputs.version }}  craftamap/pluploader:latest
+        docker build . -t eugenmayer/pluploaderng:${{ github.event.inputs.version }} --build-arg PL_VERSION=${{ github.event.inputs.version }}
+        docker tag eugenmayer/pluploaderng:${{ github.event.inputs.version }}  eugenmayer/pluploaderng:latest
     - name: Push the versioned Docker image
-      run: docker push craftamap/pluploader:${{ github.event.inputs.version }}
+      run: docker push eugenmayer/pluploaderng:${{ github.event.inputs.version }}
     - name: Push the latest Docker image
-      run: docker push craftamap/pluploader:latest
+      run: docker push eugenmayer/pluploaderng:latest

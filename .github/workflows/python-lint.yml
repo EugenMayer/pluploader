@@ -30,4 +30,4 @@ jobs:
         poetry run flake8 --count pluploader/
     - name: Run pluploader --version
       run: |
-        poetry run pluploader --version
+        poetry run pluploaderng --version
