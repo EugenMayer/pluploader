@@ -35,13 +35,13 @@ docker image from dockerhub or github:
 ```bash
 docker pull ghcr.io/eugenmayer/pluploaderng:latest
 # OR
-docker pull ghcr.io/eugenmayer/pluploaderng:v0.8.3
+docker pull ghcr.io/eugenmayer/pluploaderng:0.9.2
 ```
 
 pluploaderng can then be run by executing
 
 ```bash
-docker run -v "$(pwd)":/workdir -it ghcr.io/eugenmayer/pluploaderng:v0.8.3
+docker run -v "$(pwd)":/workdir -it ghcr.io/eugenmayer/pluploaderng:0.9.2
 ```
 
 ## Usage
