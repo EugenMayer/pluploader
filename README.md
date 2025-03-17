@@ -8,8 +8,6 @@
 
 # pluploader
 
-![PyPI version](https://img.shields.io/pypi/v/pluploader?style=flat-square) ![Upload Python Package](https://img.shields.io/github/workflow/status/craftamap/pluploader/Python%20package/master?style=flat-square)
-
 ![pluploader](.github/images/pluploader-demo-1.gif)
 
 A advanced command-line plugin uploader/installer/manager for atlassian
@@ -35,15 +33,15 @@ If you do not want to install python3 or pip, you can also pull the latest
 docker image from dockerhub or github:
 
 ```bash
-docker pull craftamap/pluploader:latest
+docker pull ghcr.io/eugenmayer/pluploaderng:latest
 # OR
-docker pull ghcr.io/craftamap/pluploader/pluploader:v0.8.3
+docker pull ghcr.io/eugenmayer/pluploaderng:v0.8.3
 ```
 
 pluploaderng can then be run by executing
 
 ```bash
-docker run -v "$(pwd)":/workdir -it craftamap/pluploader:v0.8.3
+docker run -v "$(pwd)":/workdir -it ghcr.io/eugenmayer/pluploaderng:v0.8.3
 ```
 
 ## Usage
